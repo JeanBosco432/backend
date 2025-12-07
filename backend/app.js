@@ -4,8 +4,10 @@ const app=express();
 const port=3000;
 const cors=require('cors');
 const{ Resend } = require('resend');
+const dotenv=require('dotenv');
+dotenv.config();
 
-const resend = new Resend('re_XU5PdLCj_33sYcS6KLyAMEtVKGwMiZ1Hm');
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 app.use(express.json());
 app.use(cors());
